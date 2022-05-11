@@ -1,40 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auxpo</title>
-    <link rel="stylesheet" href="style/normalize.min.css">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style/normalize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
     <div class="content">
-        <div class="content-sidebar">
-            <button class="content-sidebar_button"></button>
-            <ul class="content-sidebar_list">
-                <li class="content-sidebar_item"><a class="content-sidebar_link 
-                    content-sidebar_fb" target="_blank" href="#"></a></li>
-                <li class="content-sidebar_item"><a class="content-sidebar_link 
-                    content-sidebar_inst" target="_blank" href="#"></a></li>
-                <li class="content-sidebar_item"><a class="content-sidebar_link 
-                    content-sidebar_tvit" target="_blank" href="#"></a></li>
-            </ul>
+      <div class="content-sidebar">
+        <button class="content-sidebar_button"></button>
+        <ul class="content-sidebar_list">
+          <li class="content-sidebar_item">
+            <a
+              class="content-sidebar_link content-sidebar_fb"
+              target="_blank"
+              href="#"
+            ></a>
+          </li>
+          <li class="content-sidebar_item">
+            <a
+              class="content-sidebar_link content-sidebar_inst"
+              target="_blank"
+              href="#"
+            ></a>
+          </li>
+          <li class="content-sidebar_item">
+            <a
+              class="content-sidebar_link content-sidebar_tvit"
+              target="_blank"
+              href="#"
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <header class="content-header">
+        <a href="#" class="content-header_logo"></a>
+        <nav>
+          <ul class="content-header_list">
+            <li class="content-header_item">
+              <a class="content-header_link active" href="#">Home</a>
+            </li>
+            <li class="content-header_item">
+              <a class="content-header_link" href="#">Roadmap</a>
+            </li>
+            <li class="content-header_item">
+              <a class="content-header_link" href="#">About us</a>
+            </li>
+            <li class="content-header_item">
+              <a class="content-header_link wallet" href="#"></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="content-main">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-body">Slide 1</div>
+              <div class="swiper-footer">text</div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-body">Slide 2</div>
+              <div class="swiper-footer">text</div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-body">Slider 3</div>
+              <div class="swiper-footer">text</div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <header class="content-header">
-            <a href="#" class="content-header_logo"></a>
-            <nav>
-                <ul class="content-header_list">
-                    <li class="content-header_item"><a class="content-header_link active" href="#">Home</a></li>
-                    <li class="content-header_item"><a class="content-header_link" href="#">Roadmap</a></li>
-                    <li class="content-header_item"><a class="content-header_link" href="#">About us</a></li>
-                    <li class="content-header_item"><a class="content-header_link wallet" href="#"></a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="content-main">
-
-        </main>
+      </main>
     </div>
-</body>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module">
+      var count = ["1", "2", "3"];
+      var art = ["Julius Caesar", "Into the Abyss", "Discobolous"];
+      var price = ["221", "157", "95"];
+      var swiper = new Swiper(".swiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return (
+              '<p class="' +
+              className +
+              '">' +
+              ("#0" + count[index]) +
+              '<span class="pagination-art">' +
+              art[index] +
+              "</span>" +
+              '<span class="pagination-price">' +
+              "<span>" +
+              (price[index] + '</span>'+ " " + "ETH") +
+              "</span>" +
+              "</p>"
+            );
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
