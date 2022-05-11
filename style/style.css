@@ -197,9 +197,16 @@ html {
 .swiper-vertical > .swiper-pagination-bullets {
   right: inherit;
   left: 60px;
+  top: 230px;
   position: absolute;
   width: 203px;
   flex-basis: 203px;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .swiper-pagination-bullets-active {
@@ -216,20 +223,22 @@ html {
   color: #fff;
 }
 
-.swiper-pagination-bullet span {
+.pagination-art {
+  font-size: 23px;
+  font-weight: 600;
+  color: #fff;
   display: block;
 }
 
-.pagination-art {
-    font-size: 23px;
-    font-weight: 600;
-    color: #fff;
+.pagination-price {
+  font-size: 17px;
+  font-weight: 600;
+  color: #bcbcbc;
+  display: block;
 }
 
-.pagination-price {
-    font-size: 17px;
-    font-weight: 600;
-    color: #BCBCBC;
+.pagination-price span {
+  font-size: 23px;
 }
 
 .swiper-footer {
@@ -246,4 +255,57 @@ html {
     rgba(66, 66, 66, 0) 100%
   );
   backdrop-filter: blur(47.2917px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.swiper-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 5%;
+    flex-basis: calc(100% - 360px);
+    padding-left: 60px;
+}
+
+.swiper-info__author {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    font-family: 'Caudex', serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.swiper-info__item {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.swiper-info__item span {
+    display: block;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 500;
+    color: #BCBCBC;
+    margin-top: 11px;
+}
+
+.swiper-cover {
+    width: 225px;
+    height: 225px;;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-cover__img {
+    width: 225px;
+    height: 225px;;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
